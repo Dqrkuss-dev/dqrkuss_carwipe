@@ -1,0 +1,43 @@
+/* Graphite surfaces, 1 px rules, square corners. Inter for text, Roboto Mono for values. No backdrop-filter or
+   color-mix: the FiveM browser does not support them. */
+:root {
+  --font: 'Tool Sans', 'Segoe UI', Arial, sans-serif;
+  --mono: 'Tool Mono', Consolas, 'Courier New', monospace;
+
+  --accent: #e2b84f;
+  --accent-ink: #16181b;             /* text on an accent fill */
+  --sel: rgba(226, 184, 79, .16);    /* selected row / pressed toggle */
+
+  --win: #1f2226;      /* window body */
+  --bar: #2a2d32;      /* title bar, status bar */
+  --pane: #26292d;     /* toolbar, group headers, table heads */
+  --field: #131518;    /* inputs, picture wells */
+  --hover: #30343a;
+  --btn: #33373d;
+  --btn-line: #4a4f57;
+  --line: #3b4047;     /* strong rules (window, sections) */
+  --grid: #2e3237;     /* property grid / table rules */
+  --zebra: #22252a;
+
+  --ink: #eceef1;
+  --ink-2: #c3c8ce;
+  --mute: #929aa3;
+  --faint: #6d747c;
+
+  --danger: #ec6b75;
+  --danger-bg: #3a1f23;
+  --ok: #62d394;
+  --warn: #e8ac4f;
+  --close: #c42b1c;    /* the title bar close button, like Windows */
+
+  --fs: 13px;          /* body text, the smallest text a player reads */
+  --fs-m: 14px;
+  --fs-l: 15px;
+  --fs-kbd: 12px;      /* key caps only */
+
+  --title-h: 32px;
+  --tool-h: 34px;
+  --row-h: 30px;
+  --ctl-h: 26px;
+  --pad: 10px;
+}
