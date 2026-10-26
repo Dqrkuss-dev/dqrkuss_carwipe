@@ -42,7 +42,7 @@
   "fb_keep_notkept": "Bu araç korunan araç listesinde değil.",
   "fb_kept": "Bu araç ({plate}) artık hiç kaldırılmaz.",
   "fb_kept_model": "Bu modeldeki hiçbir araç artık silinmez.",
-  "fb_kept_plate": "{plate} plakalı hiçbir araç artık silinmez.",
+  "fb_kept_plate": "{plate} plakası artık hangi araçta olursa olsun silinmez.",
   "fb_refused": "Şu an mümkün değil: temizlik sürüyor, engellenmiş ya da iptal edilecek bir şey yok.",
   "fb_save_denied": "Temizlik geri sayımı sürerken bir araca bin.",
   "fb_saved": "Aracın bu temizlikte kalıyor.",

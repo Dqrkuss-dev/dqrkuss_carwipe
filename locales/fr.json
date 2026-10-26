@@ -42,7 +42,7 @@
   "fb_keep_notkept": "Cette voiture n'est pas dans la liste des voitures gardées.",
   "fb_kept": "Cette voiture ({plate}) n'est plus jamais retirée.",
   "fb_kept_model": "Toutes les voitures de ce modèle ne sont plus jamais retirées.",
-  "fb_kept_plate": "Toutes les voitures avec la plaque {plate} ne sont plus jamais retirées.",
+  "fb_kept_plate": "La plaque {plate} n’est plus jamais retirée, quelle que soit la voiture.",
   "fb_refused": "Impossible pour l'instant : un nettoyage est en cours, bloqué, ou il n'y a rien à annuler.",
   "fb_save_denied": "Monte dans une voiture pendant le compte à rebours du nettoyage.",
   "fb_saved": "Ta voiture est gardée pour ce nettoyage.",

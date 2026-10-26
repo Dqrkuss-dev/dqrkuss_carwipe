@@ -44,7 +44,7 @@ local function query(kind, sql, params)
 end
 Garage.query = query
 
--- Garage scripts add their own columns (jg-advancedgarages: in_garage, impound, fuel, engine, body), so the write
+-- Garage scripts add their own columns (in_garage, impound, fuel, engine, body), so the write
 -- adapts to what the table really has.
 local function columns(tableName)
     if columnCache[tableName] then return columnCache[tableName] end

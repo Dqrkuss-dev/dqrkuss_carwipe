@@ -42,7 +42,7 @@
   "fb_keep_notkept": "Este coche no está en la lista de conservados.",
   "fb_kept": "Este coche ({plate}) ya no se retira nunca.",
   "fb_kept_model": "Ningún coche de este modelo se retira ya.",
-  "fb_kept_plate": "Ningún coche con la matrícula {plate} se retira ya.",
+  "fb_kept_plate": "La matrícula {plate} ya no se retira nunca, esté en el coche que esté.",
   "fb_refused": "Ahora no es posible: hay una limpieza en curso, bloqueada, o no hay nada que cancelar.",
   "fb_save_denied": "Súbete a un coche mientras corre la cuenta atrás de la limpieza.",
   "fb_saved": "Tu coche se conserva en esta limpieza.",

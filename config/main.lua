@@ -50,9 +50,8 @@ Config = {
         returnOwned = 'garage',
 
         -- Where owned cars are looked up. 'framework' (default): the framework's own table (Qbox / QBCore
-        -- player_vehicles, ESX owned_vehicles), which covers qb-garages, qbx_garages, esx_garage, jg-advancedgarages and
-        -- every other garage script that stores cars there. A garage script with its own table: add an adapter in
-        -- server/garages/ (copy example.lua) and put its name here.
+        -- player_vehicles, ESX owned_vehicles), which covers every garage script that stores cars there. A garage
+        -- script with its own table: add an adapter in server/garages/ (copy example.lua) and put its name here.
         adapter = 'framework',
     },
 }

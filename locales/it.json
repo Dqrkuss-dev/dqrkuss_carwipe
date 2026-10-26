@@ -42,7 +42,7 @@
   "fb_keep_notkept": "Questa auto non è nella lista delle auto tenute.",
   "fb_kept": "Questa auto ({plate}) non viene più rimossa.",
   "fb_kept_model": "Nessuna auto di questo modello viene più rimossa.",
-  "fb_kept_plate": "Nessuna auto con targa {plate} viene più rimossa.",
+  "fb_kept_plate": "La targa {plate} non viene più rimossa, su qualsiasi auto sia.",
   "fb_refused": "Non è possibile ora: una pulizia è in corso, bloccata, o non c'è niente da annullare.",
   "fb_save_denied": "Sali in un'auto mentre scorre il conto alla rovescia della pulizia.",
   "fb_saved": "La tua auto resta per questa pulizia.",

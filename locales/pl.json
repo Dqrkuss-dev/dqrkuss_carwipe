@@ -42,7 +42,7 @@
   "fb_keep_notkept": "Tego auta nie ma na liście zachowanych.",
   "fb_kept": "To auto ({plate}) nie będzie już nigdy usuwane.",
   "fb_kept_model": "Żadne auto tego modelu nie jest już usuwane.",
-  "fb_kept_plate": "Żadne auto z tablicą {plate} nie jest już usuwane.",
+  "fb_kept_plate": "Tablica {plate} nie jest już usuwana, na jakimkolwiek aucie.",
   "fb_refused": "Teraz niemożliwe: czyszczenie trwa, jest zablokowane albo nie ma czego anulować.",
   "fb_save_denied": "Wsiądź do auta, gdy trwa odliczanie czyszczenia.",
   "fb_saved": "Twoje auto zostaje przy tym czyszczeniu.",

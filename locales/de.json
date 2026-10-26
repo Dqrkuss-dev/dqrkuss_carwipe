@@ -42,7 +42,7 @@
   "fb_keep_notkept": "Dieses Auto steht nicht auf der Behalten-Liste.",
   "fb_kept": "Dieses Auto ({plate}) wird jetzt nie entfernt.",
   "fb_kept_model": "Jedes Auto dieses Modells wird jetzt nie entfernt.",
-  "fb_kept_plate": "Jedes Auto mit dem Kennzeichen {plate} wird jetzt nie entfernt.",
+  "fb_kept_plate": "Das Kennzeichen {plate} wird jetzt nie entfernt, egal an welchem Auto.",
   "fb_refused": "Gerade nicht möglich: eine Reinigung läuft, ist blockiert oder es gibt nichts abzubrechen.",
   "fb_save_denied": "Setz dich in ein Auto, während die Reinigung herunterzählt.",
   "fb_saved": "Dein Auto bleibt bei dieser Reinigung stehen.",

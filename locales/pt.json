@@ -42,7 +42,7 @@
   "fb_keep_notkept": "Este carro não está na lista de mantidos.",
   "fb_kept": "Este carro ({plate}) nunca mais é removido.",
   "fb_kept_model": "Nenhum carro deste modelo é removido agora.",
-  "fb_kept_plate": "Nenhum carro com a placa {plate} é removido agora.",
+  "fb_kept_plate": "A placa {plate} nunca é removida agora, em qualquer carro.",
   "fb_refused": "Não é possível agora: uma limpeza está rodando, bloqueada, ou não há nada para cancelar.",
   "fb_save_denied": "Entre em um carro enquanto a contagem da limpeza estiver rodando.",
   "fb_saved": "Seu carro fica nesta limpeza.",

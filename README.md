@@ -12,6 +12,21 @@
 Scheduled, announced removal of empty cars for FiveM, with an admin panel, safe zones, a keep list and `/savecar`.
 Owned cars go back to their garage instead of being lost.
 
+## Features
+
+- **Scheduled wipes** every 15 min to 24 h, set in the panel without a restart
+- **Countdown card** on every screen, with warnings at 10, 5 and 1 min and 30 s; or chat lines, or both
+- **/savecar**: players keep the car they sit in for the coming wipe
+- **Occupied cars always stay**, in any seat
+- **Smart wipe**: cars used in the last 15 minutes stay (0 to 240, or off)
+- **Keep list**: never wipe one car, a whole car model (every Sultan, for example), or one plate number (say EVENT01, whatever car it is on)
+- **Safe zones** from 5 to 100 m, added where you stand
+- **Owned cars go back to their garage** with fuel, engine and body kept, instead of being deleted (Qbox, QBCore, ESX)
+- **Any garage script**: garages that store cars in the framework table work as is; one adapter file covers a garage with its own table
+- **Admin panel** (`/carwipe`): start, force, cancel, settings, kept cars, safe zones and the last 10 wipes
+- **Other scripts can pause wipes** during a heist or event, and protect their own cars with a state bag
+- **Standalone**: no library, no database tables, no items; 11 languages
+
 ## Requirements
 
 None. Optional: `oxmysql` for sending owned cars back to their garage (Qbox, QBCore or ESX).
@@ -39,7 +54,7 @@ Framework admins (Qbox and QBCore `admin` / `god`, ESX `admin` / `superadmin`) c
 | `/carwipe start` | Admins, console | Starts a wipe with a 60 s countdown |
 | `/carwipe force` | Admins, console | Starts a wipe with a 10 s countdown |
 | `/carwipe cancel` | Admins, console | Cancels the countdown |
-| `/carwipe keep [model\|plate]` | Admins | The car you sit in is never wiped; `model` keeps every car of that model, `plate` every car with that plate (also in the panel, Kept tab) |
+| `/carwipe keep [model\|plate]` | Admins | The car you sit in is never wiped; `model` keeps every car of its model, `plate` keeps its plate number on whatever car it is on (also in the panel, Kept tab) |
 | `/carwipe unkeep` | Admins | Takes the keep entry that matches the car you sit in off the list |
 | `/savecar` | Everyone | Keeps the car you sit in for the coming wipe (only during a countdown) |
 
@@ -93,8 +108,8 @@ To protect a car from your own script, set one of the `protectedStates` keys on 
 ## Other garage scripts
 
 Owned cars are found in the framework's table (`player_vehicles` on Qbox / QBCore, `owned_vehicles` on ESX). That
-covers qb-garages, qbx_garages, esx_garage, jg-advancedgarages and every garage script that stores cars there; extra
-columns such as `in_garage`, `impound`, `fuel`, `engine` and `body` are used when the table has them.
+covers every garage script that stores cars there; extra columns such as `in_garage`, `impound`, `fuel`, `engine` and
+`body` are used when the table has them.
 
 For a garage script with its own table, write an adapter:
 
