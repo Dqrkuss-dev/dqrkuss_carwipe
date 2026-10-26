@@ -12,7 +12,7 @@
     state: screen === 'both' ? 'countdown' : 'waiting', left: screen === 'both' ? 42 : 4231, interval: 120, smart: 15,
     blocked: screen === 'blocked' ? ['heist_script: bank job running'] : [], keepMax: 200, zonesMax: 100, zonesOn: true,
     zoneRadius: 25, command: 'carwipe',
-    kept: [{ i: 1, label: 'sultanrs', plate: '42JDK118' }, { i: 2, label: 'police', plate: 'LSPD 014' }, { i: 3, label: 'mule', plate: '07TRK552' }],
+    kept: [{ i: 1, kind: 'car', label: 'Sultan RS', plate: '42JDK118' }, { i: 2, kind: 'model', label: 'Police Cruiser', plate: 'LSPD 014' }, { i: 3, kind: 'plate', plate: 'EVENT01' }],
     zones: [
       { i: 1, x: 215.4, y: -810.2, radius: 25, dist: 12 },
       { i: 2, x: -339.8, y: -136.5, radius: 40, dist: 1184 },
