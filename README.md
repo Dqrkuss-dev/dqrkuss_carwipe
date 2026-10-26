@@ -20,15 +20,20 @@ and the server gets the blame. This one only removes cars nobody needs:
 - **Owned cars are never lost.** They go back to their own garage with their fuel, engine and body as they were, on
   Qbox, QBCore and ESX. A garage script with its own table is covered by one small adapter file.
 - **Recently used cars stay.** A car used in the last 15 minutes is skipped, so a quick stop at a shop
-  never costs anyone their car.
-- **Players can save their own car.** `/savecar` during the countdown, or simply sit in it.
+  never costs anyone their car. Change the minutes (or turn it off) in the panel, no restart.
+- **Players can save their own car.** `/savecar` during the countdown, or simply sit in it. Rename or turn off the
+  command in the config.
 - **You choose what is never wiped:** one car, a whole car model, or a plate number, plus safe zones you place where you
-  stand.
-- **Nobody is surprised.** A countdown card on every screen, with warnings at 10, 5 and 1 min and 30 s.
-- **Run it all in game.** One panel for wipes, settings, kept cars, safe zones and the history. No config edits, no
-  restarts.
+  stand. All added and removed in game.
+- **Nobody is surprised.** A countdown card on every screen, with warnings at 10, 5 and 1 min and 30 s. The warning
+  times, the countdown length and chat lines instead of (or next to) the card are all one setting each.
+- **Run it all in game.** One panel for wipes, the time between wipes, kept cars, safe zones and the history. No
+  config edits, no restarts.
 - **Plays nice with other scripts.** Heists and events can pause a wipe; any script can protect its cars.
 - **Free, open source and standalone.** No library, no database tables, no items.
+
+Every number above is a setting: the panel changes the everyday ones live, `config/main.lua` the rest, each with its
+range and default written next to it.
 
 ## Features
 
