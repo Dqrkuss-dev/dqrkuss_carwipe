@@ -12,6 +12,8 @@
 Scheduled, announced removal of empty cars for FiveM, with an admin panel, safe zones, a keep list and `/savecar`.
 Owned cars go back to their garage instead of being lost.
 
+Made by **dScripts**. More FiveM scripts for Qbox, QBCore and ESX at **[dscripts.dev](https://dscripts.dev)**.
+
 ## Why this one
 
 Most car wipes delete every empty car on a timer. Players lose the car they parked a minute ago, owned cars vanish,
@@ -151,6 +153,11 @@ oxmysql (`'query'`, `'update'`, `'scalar'`, `'single'`, `'insert'`).
 - **Owned cars do not come back to the garage:** the console prints a line for each car whose row could not be written. Check `oxmysql`.
 - **`/carwipe` says you may not use it:** add the ace line above, or check `Config.Admin`.
 - **The panel or the countdown card does not show:** the folder must contain `web/dist/`. Restart the resource.
+
+## More from dScripts
+
+Car Wipe is free. Our other scripts (jobs, vehicles, server tools) are on [dscripts.dev](https://dscripts.dev), with
+setup guides at [dscripts.dev/docs](https://dscripts.dev/docs). Questions: support@dscripts.dev.
 
 ## License
 
