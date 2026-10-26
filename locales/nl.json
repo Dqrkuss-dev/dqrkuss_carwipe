@@ -42,7 +42,7 @@
   "fb_keep_notkept": "Deze auto staat niet op de lijst met bewaarde auto's.",
   "fb_kept": "Deze auto ({plate}) wordt nu nooit meer verwijderd.",
   "fb_kept_model": "Geen enkele auto van dit model wordt nog verwijderd.",
-  "fb_kept_plate": "Geen enkele auto met kenteken {plate} wordt nog verwijderd.",
+  "fb_kept_plate": "Kenteken {plate} wordt nu nooit verwijderd, op welke auto ook.",
   "fb_refused": "Nu niet mogelijk: een opruiming loopt, is geblokkeerd of er is niets te annuleren.",
   "fb_save_denied": "Stap in een auto terwijl de opruiming aftelt.",
   "fb_saved": "Je auto blijft staan bij deze opruiming.",

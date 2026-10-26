@@ -42,7 +42,7 @@
   "fb_keep_notkept": "This car is not on the keep list.",
   "fb_kept": "This car ({plate}) is never wiped now.",
   "fb_kept_model": "Every car of this model is never wiped now.",
-  "fb_kept_plate": "Every car with plate {plate} is never wiped now.",
+  "fb_kept_plate": "Plate {plate} is never wiped now, whatever car it is on.",
   "fb_refused": "Not possible now: a wipe is running, blocked, or there is nothing to cancel.",
   "fb_save_denied": "Sit in a car while a car wipe is counting down.",
   "fb_saved": "Your car is kept for this wipe.",
