@@ -12,20 +12,35 @@
 Scheduled, announced removal of empty cars for FiveM, with an admin panel, safe zones, a keep list and `/savecar`.
 Owned cars go back to their garage instead of being lost.
 
+## Why this one
+
+Most car wipes delete every empty car on a timer. Players lose the car they parked a minute ago, owned cars vanish,
+and the server gets the blame. This one only removes cars nobody needs:
+
+- **Owned cars are never lost.** They go back to their own garage with their fuel, engine and body as they were, on
+  Qbox, QBCore and ESX. A garage script with its own table is covered by one small adapter file.
+- **Recently used cars stay.** A car used in the last 15 minutes is skipped, so a quick stop at a shop
+  never costs anyone their car.
+- **Players can save their own car.** `/savecar` during the countdown, or simply sit in it.
+- **You choose what is never wiped:** one car, a whole car model, or a plate number, plus safe zones you place where you
+  stand.
+- **Nobody is surprised.** A countdown card on every screen, with warnings at 10, 5 and 1 min and 30 s.
+- **Run it all in game.** One panel for wipes, settings, kept cars, safe zones and the history. No config edits, no
+  restarts.
+- **Plays nice with other scripts.** Heists and events can pause a wipe; any script can protect its cars.
+- **Free, open source and standalone.** No library, no database tables, no items.
+
 ## Features
 
-- **Scheduled wipes** every 15 min to 24 h, set in the panel without a restart
-- **Countdown card** on every screen, with warnings at 10, 5 and 1 min and 30 s; or chat lines, or both
-- **/savecar**: players keep the car they sit in for the coming wipe
-- **Occupied cars always stay**, in any seat
-- **Smart wipe**: cars used in the last 15 minutes stay (0 to 240, or off)
-- **Keep list**: never wipe one car, a whole car model (every Sultan, for example), or one plate number (say EVENT01, whatever car it is on)
-- **Safe zones** from 5 to 100 m, added where you stand
-- **Owned cars go back to their garage** with fuel, engine and body kept, instead of being deleted (Qbox, QBCore, ESX)
-- **Any garage script**: garages that store cars in the framework table work as is; one adapter file covers a garage with its own table
-- **Admin panel** (`/carwipe`): start, force, cancel, settings, kept cars, safe zones and the last 10 wipes
-- **Other scripts can pause wipes** during a heist or event, and protect their own cars with a state bag
-- **Standalone**: no library, no database tables, no items; 11 languages
+- Wipes every 15 min to 24 h, or only when an admin starts one
+- Start (60 s countdown), force (10 s) or cancel from the panel or the console
+- Countdown on screen, as chat lines, or both
+- Occupied cars always stay, in any seat
+- Smart wipe time from 0 (off) to 240 minutes
+- Keep list of up to 200 entries, safe zones from 5 to 100 m
+- History of the last 10 wipes: removed, sent to a garage, skipped, and who started it
+- Exports and `GlobalState.dqCarwipe` for other scripts
+- 11 languages
 
 ## Requirements
 
