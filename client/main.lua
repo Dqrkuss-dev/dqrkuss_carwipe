@@ -3,8 +3,12 @@ function SendUi(action, data)
     SendNUIMessage({ action = action, data = data, locale = Locale() })
 end
 
+-- Popups: the server's notifications when one runs (Config.Notify 'auto', client/handoff.lua), else this script's own toasts.
+local NOTIFY_KINDS = { inform = true, success = true, warning = true, error = true }
+
 function Toast(text, kind)
-    SendUi('toast', { text = text, kind = kind or 'inform' })
+    kind = NOTIFY_KINDS[kind] and kind or 'inform'
+    if not Handoff.notify(text, kind, Text('title')) then SendUi('toast', { text = text, kind = kind }) end
 end
 
 function CommandOf(cfg, default)
@@ -32,6 +36,13 @@ end
 
 local ANNOUNCE_KIND = { countdown = 'warning', cancelled = 'inform', finished = 'success' }
 
+-- Config.Announce.card 'notify': each warning as a server notification (client/handoff.lua) when one runs; 'top' (or no
+-- notification resource): this script's countdown card at the top of the screen.
+local function warningAsNotice(text)
+    local cfg = type(Config.Announce) == 'table' and Config.Announce or {}
+    return cfg.card == 'notify' and Handoff.notify(text, 'warning', Text('title'))
+end
+
 local function announceText(kind, args)
     if kind == 'countdown' then
         return Text('notice_countdown', { time = timeText(args.seconds), command = saveCommand() or '-' })
@@ -48,7 +59,8 @@ RegisterNetEvent('dqrkuss_carwipe:client:announce', function(kind, args, mode)
     if mode == 'chat' or mode == 'both' then chatLine(text) end
     if mode ~= 'chat' then
         if kind == 'countdown' then
-            SendUi('countdown', { seconds = math.max(0, math.floor(tonumber(args.seconds) or 0)), command = saveCommand() })
+            local seconds = math.max(0, math.floor(tonumber(args.seconds) or 0))
+            if not warningAsNotice(text) then SendUi('countdown', { seconds = seconds, command = saveCommand() }) end
         else
             SendUi('countdown_end')
             Toast(text, ANNOUNCE_KIND[kind])

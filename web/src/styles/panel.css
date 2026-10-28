@@ -7,7 +7,7 @@
   --pane: #171c21; --fs: 13px; --ctl-h: 28px;
   width: 480px; max-height: calc(var(--page-h, 100vh) - 32px); display: flex; flex-direction: column; pointer-events: auto;
   padding: 10px; background: var(--cw-bg); border: 1px solid #000; border-radius: 14px;
-  box-shadow: inset 0 0 0 1px #2c333a, 0 18px 40px rgba(0, 0, 0, .55); color: var(--cw-txt);
+  box-shadow: inset 0 0 0 1px #2c333a, 0 11px 24px rgba(0, 0, 0, .55); contain: layout paint; color: var(--cw-txt);
 }
 .stage { justify-content: flex-end; align-items: flex-start; padding: 16px 12px 0 0; }
 .cw-frame:not(.focused) { opacity: .94; }

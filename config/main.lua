@@ -3,6 +3,8 @@
 -- this file until they are changed again in the panel.
 Config = {
     Locale = 'en', -- language of all texts: en, bg, de, es, fr, it, nl, pl, pt, ru, tr; default 'en'
+    Notify = 'auto', -- 'auto': the server's notifications (first started of the resources in Config.NotifyOrder), else this script's own popups; 'own'; default 'auto'
+    NotifyOrder = { 'dqrkuss_lib', 'ox_lib', 'qb-core', 'es_extended' }, -- notification resources tried in this order with 'auto'; default { 'dqrkuss_lib', 'ox_lib', 'qb-core', 'es_extended' }
 
     Admin = {
         command = 'carwipe',       -- admin chat command, default 'carwipe'
@@ -21,6 +23,7 @@ Config = {
 
     Announce = {
         mode = 'notify', -- 'notify' (countdown card and notices on screen), 'chat' (chat lines) or 'both'; default 'notify'
+        card = 'top', -- 'top': this script's countdown card at the top of the screen (catches the eye); 'notify': each warning as a normal notification (the server's notifications when one runs, else the top card); default 'top'
     },
 
     -- Smart wipe: a car that was entered, driven or moved recently stays.

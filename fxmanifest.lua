@@ -5,7 +5,7 @@ lua54 'yes'
 name 'dqrkuss_carwipe'
 author 'dqrkuss'
 description 'Scheduled cleanup of empty cars with a countdown, admin panel, safe zones and a keep list'
-version '1.0.0'
+version '1.0.1'
 
 shared_scripts {
     'shared/i18n.lua',
@@ -29,6 +29,7 @@ server_scripts {
 }
 
 client_scripts {
+    'client/handoff.lua',
     'client/main.lua',
     'client/panel.lua',
 }

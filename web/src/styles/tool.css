@@ -16,7 +16,7 @@ button, input { font: inherit; color: inherit; }
 .btn:hover:not(:disabled) { background: var(--hover); border-color: #5b616a; }
 .btn:disabled { opacity: .4; cursor: default; }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
-.btn.primary:hover:not(:disabled) { filter: brightness(1.08); background: var(--accent); }
+.btn.primary:hover:not(:disabled) { background: linear-gradient(rgba(255, 255, 255, .08), rgba(255, 255, 255, .08)), var(--accent); }
 .btn.danger { color: var(--danger); }
 .btn.danger:hover:not(:disabled), .btn.danger.armed { border-color: var(--danger); background: var(--danger-bg); }
 .btn.tall { height: 30px; }
@@ -33,7 +33,7 @@ button, input { font: inherit; color: inherit; }
 .stepper .val {
   display: flex; align-items: center; width: 84px; background: var(--field); border: 1px solid var(--line); border-left: 0; border-right: 0;
 }
-.stepper .val:focus-within { box-shadow: inset 0 0 0 1px var(--accent); }
+.stepper .val:focus-within { outline: 1px solid var(--accent); }
 .stepper .val input {
   flex: 1; min-width: 0; width: 100%; height: 100%; padding: 0 2px 0 6px; text-align: right; background: none; border: 0; outline: none;
   font: 500 var(--fs) var(--mono); color: var(--ink);

@@ -5,6 +5,9 @@ import { Panel } from './Panel';
 import { CountdownCard } from './CountdownCard';
 import { Toasts, type ToastItem } from './Toasts';
 
+const CARD_SHOW_MS = 8000; // how long the card stays after each warning
+const CARD_FINAL_S = 30;   // and from this many seconds before the wipe until it
+
 type Timed<T> = { value: T; at: number };
 type Card = Timed<Countdown> & { total: number };
 type Message = { action?: string; data?: unknown; locale?: unknown };
@@ -66,12 +69,22 @@ export function App() {
     };
   }, []);
 
-  const ticking = view !== null || card !== null;
+  // The card shows for a few seconds at each warning (10 / 5 / 1 min) and stays only for the last seconds, so it never
+  // sits on screen ticking for the whole countdown.
+  const left = card ? card.value.seconds - (now - card.at) / 1000 : 0;
+  const shown = card !== null && (now - card.at < CARD_SHOW_MS || left <= CARD_FINAL_S);
+  const ticking = view !== null || shown;
   useEffect(() => {
     if (!ticking) return;
     const id = window.setInterval(() => setNow(Date.now()), 250);
     return () => window.clearInterval(id);
   }, [ticking]);
+  // Hidden between warnings: wake up once when the final seconds start.
+  useEffect(() => {
+    if (!card || shown) return;
+    const id = window.setTimeout(() => setNow(Date.now()), Math.max(0, (left - CARD_FINAL_S) * 1000) + 50);
+    return () => window.clearTimeout(id);
+  }, [card, shown, left]);
 
   // A card whose wipe never reported back (resource restart mid-countdown) goes 30 s after zero.
   useEffect(() => {
@@ -81,7 +94,7 @@ export function App() {
   return (
     <>
       <div className="top-stack">
-        {card && <CountdownCard card={card.value} at={card.at} total={card.total} now={now} t={t} />}
+        {card && shown && <CountdownCard card={card.value} at={card.at} total={card.total} now={now} t={t} />}
         <Toasts items={toasts} t={t} />
       </div>
       {view && <Panel view={view.value} at={view.at} now={now} focused={focused} t={t} />}

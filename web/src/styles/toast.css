@@ -8,7 +8,7 @@
 
 .cd-card, .toast {
   position: relative; display: flex; align-items: center; gap: 12px; min-width: 340px; max-width: 520px;
-  background: rgba(13, 16, 19, .94); border: 1px solid #2c333a; border-radius: 6px; box-shadow: 0 10px 26px rgba(0, 0, 0, .45);
+  background: rgba(13, 16, 19, .94); border: 1px solid #2c333a; border-radius: 6px; box-shadow: 0 9px 24px rgba(0, 0, 0, .45);
   color: #e9edf1; overflow: hidden;
 }
 
@@ -18,7 +18,7 @@
 .cd-title { font: 600 17px/1.25 var(--font); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .cd-hint { font-size: 13px; line-height: 1.35; color: #9aa4ae; }
 .cd-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: #1f262c; }
-.cd-bar i { display: block; height: 100%; background: var(--warn); transition: width .25s linear; }
+.cd-bar i { display: block; height: 100%; background: var(--warn); }
 .cd-card.urgent .cd-icon { color: var(--danger); }
 .cd-card.urgent .cd-bar i { background: var(--danger); }
 

@@ -60,7 +60,7 @@ export function Panel({ view, at, now, focused, t }: Props) {
           <header className="cw-top">
             <h1>{t('panel_title')}</h1>
             {view.command && <span className="cmd">/{view.command}</span>}
-            <button className="cw-x" title={t('btn_close')} onClick={() => void post('close')}><Close size={18} /></button>
+            <button className="cw-x" aria-label={t('btn_close')} onClick={() => void post('close')}><Close size={18} /></button>
           </header>
 
           <div className="live">
@@ -88,13 +88,13 @@ export function Panel({ view, at, now, focused, t }: Props) {
           )}
 
           <div className="cw-actions">
-            <button className="btn tall" title={t('act_start')} disabled={busy || sending} onClick={() => void ask('start', {}, null)}>
+            <button className="btn tall" aria-label={t('act_start')} disabled={busy || sending} onClick={() => void ask('start', {}, null)}>
               <Play size={16} />{t('btn_start')}
             </button>
-            <button className="btn tall" title={t('act_force')} disabled={busy || sending} onClick={() => void ask('force', {}, null)}>
+            <button className="btn tall" aria-label={t('act_force')} disabled={busy || sending} onClick={() => void ask('force', {}, null)}>
               <Bolt size={16} />{t('btn_force')}
             </button>
-            <button className="btn tall danger" title={t('act_cancel')} disabled={view.state !== 'countdown' || sending}
+            <button className="btn tall danger" aria-label={t('act_cancel')} disabled={view.state !== 'countdown' || sending}
               onClick={() => void ask('cancel', {}, null)}>
               <Stop size={16} />{t('btn_cancel')}
             </button>

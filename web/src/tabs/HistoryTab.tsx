@@ -24,7 +24,7 @@ export function HistoryTab({ view, t }: TabProps) {
               <td className="num">{wipe.removed ?? 0}</td>
               <td className="num">{wipe.garage ?? 0}</td>
               <td className="num">{wipe.skipped ?? 0}</td>
-              <td title={by}>{by}</td>
+              <td aria-label={by}>{by}</td>
             </tr>
           );
         })}
