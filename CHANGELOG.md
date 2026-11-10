@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.0.1 (unreleased)
+## 1.0.2 (unreleased)
+- Countdown card position: `Config.Announce.position` (`'top'` default, `'top-left'`, `'top-right'`, `'bottom'`,
+  `'bottom-left'` above the minimap, `'bottom-right'`), also in the panel (`/carwipe` -> Settings, saved at once). The
+  script's own popups move with it.
+- The download now includes the panel source (`web/src`, React + Vite): change it and run `npm run build` in `web/`.
+
+## 1.0.1
 - Countdown card shows for 8 s at each warning (10 / 5 / 1 min) and stays only for the last 30 s, instead of ticking on screen for the whole countdown.
 - Notices go to the server's notifications when one runs (`Config.Notify = 'auto'`, first started of
   `Config.NotifyOrder`), else to the script's own toasts.

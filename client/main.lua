@@ -3,6 +3,13 @@ function SendUi(action, data)
     SendNUIMessage({ action = action, data = data, locale = Locale() })
 end
 
+-- Where the countdown card and own popups sit: the server sends it with each announcement (config, or the panel's
+-- saved choice), so it is set again before every card; the panel view carries it too.
+function SetUiPosition(position)
+    position = CW.position(position, nil)
+    if position then SendUi('position', position) end
+end
+
 -- Popups: the server's notifications when one runs (Config.Notify 'auto', client/handoff.lua), else this script's own toasts.
 local NOTIFY_KINDS = { inform = true, success = true, warning = true, error = true }
 
@@ -52,9 +59,10 @@ local function announceText(kind, args)
     return Text('notice_finished', { removed = tonumber(args.removed) or 0, garage = tonumber(args.garage) or 0 })
 end
 
-RegisterNetEvent('dqrkuss_carwipe:client:announce', function(kind, args, mode)
+RegisterNetEvent('dqrkuss_carwipe:client:announce', function(kind, args, mode, position)
     if not ANNOUNCE_KIND[kind] then return end
     local text = announceText(kind, args)
+    SetUiPosition(position)
 
     if mode == 'chat' or mode == 'both' then chatLine(text) end
     if mode ~= 'chat' then

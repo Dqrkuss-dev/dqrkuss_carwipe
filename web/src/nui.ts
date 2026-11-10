@@ -21,7 +21,12 @@ export type View = {
   zoneRadius?: number;
   history?: Wipe[];
   command?: string;
+  position?: Position;
 };
+// shared/rules.lua CW.POSITIONS: where the countdown card and own popups sit
+export const POSITIONS = ['top-left', 'top', 'top-right', 'bottom-left', 'bottom', 'bottom-right'] as const;
+export type Position = (typeof POSITIONS)[number];
+export const isPosition = (v: unknown): v is Position => typeof v === 'string' && (POSITIONS as readonly string[]).includes(v);
 export type Countdown = { seconds: number; command?: string | null };
 export type ToastKind = 'inform' | 'success' | 'warning' | 'error';
 export type Reply = { ok: boolean; err?: string };

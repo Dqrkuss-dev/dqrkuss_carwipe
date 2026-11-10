@@ -37,7 +37,7 @@
         send('countdown', { seconds: view.left, command: '/savecar' });
       }
       if (action === 'cancel') { view.state = 'waiting'; view.left = 7200; send('countdown_end'); }
-      if (action === 'settings') { view.interval = data.interval; view.smart = data.smart; }
+      if (action === 'settings') { view.interval = data.interval; view.smart = data.smart; view.position = data.position; send('position', data.position); send('countdown', { seconds: 42, command: '/savecar' }); }
       if (action === 'unkeep') view.kept = view.kept.filter(function (e) { return e.i !== data.i; });
       if (action === 'zoneRemove') view.zones = view.zones.filter(function (z) { return z.i !== data.i; });
       if (action === 'zoneAdd') view.zones.push({ i: view.zones.length + 1, x: 0, y: 0, radius: data.radius, dist: 0 });

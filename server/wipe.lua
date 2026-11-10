@@ -49,7 +49,8 @@ local function publish()
 end
 
 local function announce(kind, args)
-    TriggerClientEvent('dqrkuss_carwipe:client:announce', -1, kind, args or {}, settings().mode)
+    local st = settings()
+    TriggerClientEvent('dqrkuss_carwipe:client:announce', -1, kind, args or {}, st.mode, st.position)
 end
 
 local function clearSavedCars()
@@ -226,6 +227,7 @@ function Wipe.view()
     return {
         state = state, left = left, interval = st.interval, smart = st.smart, blocked = reasons, history = rows,
         keepMax = st.keepMax, zonesMax = st.zonesMax, zonesOn = st.zones, zoneRadius = st.zoneRadius,
+        position = st.position,
     }
 end
 

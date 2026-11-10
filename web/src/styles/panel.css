@@ -71,6 +71,8 @@
 .cw-save .btn { height: 30px; border-radius: 4px; }
 .cw-kinds { display: flex; gap: 6px; }
 .cw-kinds .btn.picked { background: var(--sel); border-color: var(--accent); color: var(--cw-txt); }
+.cw-positions { display: grid; grid-template-columns: repeat(3, auto); gap: 4px; padding: 6px 0; }
+.cw-positions .btn { height: 26px; padding: 0 8px; border-radius: 4px; font-size: var(--fs); }
 
 .cw-body .table td, .cw-body .table th { padding: 0 10px; }
 .cw-body .table tbody tr { cursor: default; }

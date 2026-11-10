@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { translator } from './i18n';
-import { post, type Countdown, type ToastKind, type View } from './nui';
+import { isPosition, post, type Countdown, type Position, type ToastKind, type View } from './nui';
 import { Panel } from './Panel';
 import { CountdownCard } from './CountdownCard';
 import { Toasts, type ToastItem } from './Toasts';
@@ -21,6 +21,7 @@ export function App() {
   const [focused, setFocused] = useState(false);
   const [card, setCard] = useState<Card | null>(null);
   const [toasts, setToasts] = useState<ToastItem[]>([]);
+  const [position, setPosition] = useState<Position>('top');
   const [now, setNow] = useState(() => Date.now());
   const nextToast = useRef(0);
   const t = useMemo(() => translator(locale), [locale]);
@@ -39,7 +40,11 @@ export function App() {
 
       if ((action === 'open' || action === 'view') && data && typeof data === 'object') {
         setView({ value: data as View, at });
+        const p = (data as View).position;
+        if (isPosition(p)) setPosition(p);
         if (action === 'open') setFocused(false);
+      } else if (action === 'position') {
+        if (isPosition(data)) setPosition(data);
       } else if (action === 'focus') {
         setFocused(data === true);
       } else if (action === 'close') {
@@ -93,7 +98,7 @@ export function App() {
 
   return (
     <>
-      <div className="top-stack">
+      <div className={`top-stack pos-${position}`}>
         {card && shown && <CountdownCard card={card.value} at={card.at} total={card.total} now={now} t={t} />}
         <Toasts items={toasts} t={t} />
       </div>

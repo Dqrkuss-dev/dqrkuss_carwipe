@@ -48,7 +48,7 @@ function handlers.settings(src, data)
     local clean = CW.cleanSaved(data)
     if not clean then return fail('invalid') end
     Wipe.saveSettings(clean)
-    Log(src, 'settings: every %d min, smart %d min', clean.interval, clean.smart)
+    Log(src, 'settings: every %d min, smart %d min, card %s', clean.interval, clean.smart, clean.position or 'config')
     return ok(src)
 end
 

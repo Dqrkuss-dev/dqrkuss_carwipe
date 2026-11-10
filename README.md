@@ -96,6 +96,10 @@ where you stand, go to a zone, remove one) and Last wipes.
 | Turn automatic wipes off | `config/main.lua` | `Config.Schedule.enabled` |
 | Warning time and warnings | `config/main.lua` | `Config.Schedule.countdownMinutes`, `notices` |
 | On-screen notices, chat lines or both | `config/main.lua` | `Config.Announce.mode` |
+| Countdown warnings as the top card or as notifications | `config/main.lua` | `Config.Announce.card` |
+| Where the countdown card sits (top, corners, bottom) | `config/main.lua` (or the panel) | `Config.Announce.position` |
+| Popups in the server's notifications or this script's own | `config/main.lua` | `Config.Notify`, `Config.NotifyOrder` |
+| The look of the panel and the card (colours, layout) | `web/src/` (React + Vite) | `npm install`, then `npm run build` in `web/` |
 | Minutes a used car stays safe | `config/main.lua` (or the panel) | `Config.Smart.minutes` |
 | Wipe every empty car | `config/main.lua` | `Config.Smart.enabled = false` |
 | Safe zones on or off, radius preset | `config/main.lua` | `Config.SafeZones` |

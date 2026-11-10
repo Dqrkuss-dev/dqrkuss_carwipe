@@ -24,6 +24,7 @@ Config = {
     Announce = {
         mode = 'notify', -- 'notify' (countdown card and notices on screen), 'chat' (chat lines) or 'both'; default 'notify'
         card = 'top', -- 'top': this script's countdown card at the top of the screen (catches the eye); 'notify': each warning as a normal notification (the server's notifications when one runs, else the top card); default 'top'
+        position = 'top', -- where the countdown card and this script's own popups sit: 'top', 'top-left', 'top-right', 'bottom', 'bottom-left' (above the minimap), 'bottom-right'; also in the panel (/carwipe -> Settings), which wins; default 'top'
     },
 
     -- Smart wipe: a car that was entered, driven or moved recently stays.

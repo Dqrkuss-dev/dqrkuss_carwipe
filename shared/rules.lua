@@ -10,6 +10,15 @@ end
 
 local function tbl(value) return type(value) == 'table' and value or {} end
 
+-- Where the countdown card and this script's own popups sit on screen (Config.Announce.position, the panel).
+CW.POSITIONS = { 'top-left', 'top', 'top-right', 'bottom-left', 'bottom', 'bottom-right' }
+local POSITION = {}
+for _, name in ipairs(CW.POSITIONS) do POSITION[name] = true end
+
+function CW.position(value, default)
+    return POSITION[value] and value or default
+end
+
 local function garageMode(value)
     if value == false or value == 'skip' then return value end
     return 'garage'
@@ -57,16 +66,20 @@ function CW.settings(saved)
 
     local mode = tbl(Config.Announce).mode
     out.mode = (mode == 'chat' or mode == 'both') and mode or 'notify'
+    out.position = CW.position(tbl(Config.Announce).position, 'top')
+    if saved.position ~= nil then out.position = CW.position(saved.position, out.position) end
     return out
 end
 
--- Panel settings: interval 15-1440 minutes, smart 0-240 minutes (0 = off). Out of range is refused, not clamped.
+-- Panel settings: interval 15-1440 minutes, smart 0-240 minutes (0 = off), position one of CW.POSITIONS (optional: none
+-- keeps the config's). Out of range is refused, not clamped.
 function CW.cleanSaved(data)
     if type(data) ~= 'table' then return nil end
     local interval, smart = tonumber(data.interval), tonumber(data.smart)
     if not interval or not smart or interval ~= interval or smart ~= smart then return nil end
     if interval < 15 or interval > 1440 or smart < 0 or smart > 240 then return nil end
-    return { interval = math.floor(interval), smart = math.floor(smart) }
+    if data.position ~= nil and not POSITION[data.position] then return nil end
+    return { interval = math.floor(interval), smart = math.floor(smart), position = data.position }
 end
 
 -- The smallest notice mark at or above the seconds left that was not shown yet.

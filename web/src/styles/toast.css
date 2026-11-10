@@ -1,8 +1,12 @@
-/* Countdown card and notices, top centre. Never takes input. */
+/* Countdown card and notices, top centre unless Config.Announce.position / the panel says otherwise. Never takes input. */
 .top-stack {
   position: absolute; left: 0; right: 0; top: 28px; display: flex; flex-direction: column; align-items: center; gap: 8px;
-  pointer-events: none;
+  padding: 0 28px; pointer-events: none;
 }
+.top-stack.pos-top-left, .top-stack.pos-bottom-left { align-items: flex-start; }
+.top-stack.pos-top-right, .top-stack.pos-bottom-right { align-items: flex-end; }
+.top-stack.pos-bottom, .top-stack.pos-bottom-right { top: auto; bottom: 110px; }
+.top-stack.pos-bottom-left { top: auto; bottom: 280px; } /* above the minimap */
 
 .toasts { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 
